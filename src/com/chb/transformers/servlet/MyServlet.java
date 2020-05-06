@@ -1,6 +1,6 @@
 package com.chb.transformers.servlet;
 
-import com.chb.transformers.service.Service;
+import com.chb.transformers.service.MyService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
@@ -19,7 +19,7 @@ public class MyServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         ApplicationContext ac = WebApplicationContextUtils.getWebApplicationContext(this.getServletContext());
-        Service s = ac.getBean(Service.class);
+        MyService s = (MyService) ac.getBean("service");
         s.print();
         resp.getWriter().println("hello1");
     }
