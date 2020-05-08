@@ -20,4 +20,8 @@ public class SpringTest {
     public void testAround(){
         service.query("junit");
     }
+    @Test
+    public void testUpdate(){
+        service.update();
+    }
 }

@@ -1,5 +1,6 @@
 package com.chb.transformers.service;
 
+import com.chb.transformers.aop.Idempotent;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
@@ -12,5 +13,9 @@ public class MyService {
     public String query(String queryParam){
         System.out.println("query");
         return queryParam;
+    }
+    @Idempotent
+    public void update(){
+        System.out.println("MyService.update");
     }
 }
