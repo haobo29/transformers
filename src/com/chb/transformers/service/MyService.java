@@ -11,7 +11,7 @@ public class MyService {
         return "return";
     }
     public String query(String queryParam){
-        System.out.println("query");
+        System.out.println(queryParam);
         return queryParam;
     }
     @Idempotent

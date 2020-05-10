@@ -13,12 +13,9 @@ public class MyAdvice implements Ordered {
     }
     public void around(ProceedingJoinPoint pjp, String queryParam) throws Throwable {
         System.out.println(queryParam);
-        System.out.println(pjp.proceed());
+        pjp.proceed(new Object[]{queryParam+"11111111111"});
     }
-    public void recordUsage(UsageTracked ut){
-        ut.incrementUseCount();
-        System.out.println(ut.getCount());
-    }
+
     public Object doConcurrentOperation(ProceedingJoinPoint pjp) throws Throwable {
         int numAttempts = 0;
         PessimisticLockingFailureException lockFailureException;

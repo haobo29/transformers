@@ -1,5 +1,6 @@
 package test;
 
+import com.chb.transformers.pojo.User;
 import com.chb.transformers.service.AspectService;
 import com.chb.transformers.service.MyService;
 import org.junit.Test;
@@ -29,8 +30,12 @@ public class SpringTest {
     public void testUpdate(){
         service.update();
     }
+
     @Test
     public void testAspect(){
-        s2.save();
+        User u = new User();
+        u.setAge(10);
+        u.setName("zhangsan");
+        s2.save(u);
     }
 }
