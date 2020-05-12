@@ -1,11 +1,13 @@
 package com.chb.transformers.service;
 
 import com.chb.transformers.aop.Idempotent;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
-@Component
-public class MyService {
+import java.lang.annotation.Annotation;
+
+import org.springframework.stereotype.Component;
+
+@Component("service")
+public class MyService implements Service{
     public void save(){
         System.out.println("MyService.save");
     }

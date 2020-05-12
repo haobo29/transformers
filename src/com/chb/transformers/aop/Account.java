@@ -1,19 +1,23 @@
 package com.chb.transformers.aop;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Autowire;
 import org.springframework.beans.factory.annotation.Configurable;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
-import com.chb.transformers.service.MyService;
+import com.chb.transformers.service.Service;
 
-@Configurable
-@Component
-@Scope("prototype")
+@Configurable(autowire=Autowire.BY_TYPE)
 public class Account {
-	@Autowired
-	private MyService service;
+	private Service service;
+	private UsageTracked ut;
 	
+	public void setUt(UsageTracked ut) {
+		this.ut = ut;
+	}
+
+	public void setService(Service service) {
+		this.service = service;
+	}
+
 	public void save() {
 		service.save();
 	}

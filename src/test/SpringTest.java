@@ -28,6 +28,10 @@ public class SpringTest {
     }
     @Test
     public void testAccount() {
-    	new Account().save();
+    	for(int i = 0; i < 10; ++i) {
+    		Account a = new Account();
+        	System.out.println(a);
+        	a.save();
+    	}
     }
 }
