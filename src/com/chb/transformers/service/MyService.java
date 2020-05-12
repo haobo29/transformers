@@ -4,14 +4,13 @@ import com.chb.transformers.aop.Idempotent;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-@Service("myService")
+@Service
 public class MyService {
-    public String save(){
+    public void save(){
         System.out.println("MyService.save");
-        return "return";
     }
     public String query(String queryParam){
-        System.out.println(queryParam);
+        System.out.println("MyService.query");
         return queryParam;
     }
     @Idempotent
