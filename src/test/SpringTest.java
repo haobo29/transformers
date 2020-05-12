@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.chb.transformers.aop.Account;
 import com.chb.transformers.service.AspectService;
 import com.chb.transformers.service.MyService;
 
@@ -16,6 +17,7 @@ public class SpringTest {
     private MyService service;
     @Autowired
     private AspectService s2;
+   
     @Test
     public void testSave() {
     	service.save();
@@ -23,5 +25,9 @@ public class SpringTest {
     @Test
     public void testUpdate() {
     	service.update();
+    }
+    @Test
+    public void testAccount() {
+    	new Account().save();
     }
 }

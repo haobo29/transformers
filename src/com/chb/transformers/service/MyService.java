@@ -4,7 +4,7 @@ import com.chb.transformers.aop.Idempotent;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-@Service
+@Component
 public class MyService {
     public void save(){
         System.out.println("MyService.save");
