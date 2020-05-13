@@ -5,9 +5,9 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.EnableLoadTimeWeaving;
 import org.springframework.context.annotation.aspectj.EnableSpringConfigured;
 
+//@EnableAspectJAutoProxy
 @Configuration
-@EnableAspectJAutoProxy
-//@EnableSpringConfigured
+@EnableSpringConfigured
 @EnableLoadTimeWeaving
 public class AppConfig {
 }

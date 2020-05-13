@@ -1,5 +1,6 @@
 package com.chb.transformers.servlet;
 
+import com.chb.transformers.aop.Account;
 import com.chb.transformers.service.MyService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
@@ -22,5 +23,13 @@ public class MyServlet extends HttpServlet {
         MyService s = ac.getBean(MyService.class);
         s.save();
         resp.getWriter().println("hello1");
+        testAccount();
+    }
+    public void testAccount() {
+    	for(int i = 0; i < 10; ++i) {
+    		Account a = new Account();
+        	System.out.println(a);
+        	a.save();
+    	}
     }
 }
