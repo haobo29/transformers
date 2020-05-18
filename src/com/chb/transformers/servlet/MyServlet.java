@@ -23,13 +23,11 @@ public class MyServlet extends HttpServlet {
         MyService s = ac.getBean(MyService.class);
         s.save();
         resp.getWriter().println("hello1");
-        testAccount();
-    }
-    public void testAccount() {
-    	for(int i = 0; i < 10; ++i) {
+        for(int i = 0; i < 10; ++i) {
     		Account a = new Account();
         	System.out.println(a);
         	a.save();
     	}
     }
+    
 }

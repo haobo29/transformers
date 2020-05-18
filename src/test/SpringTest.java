@@ -7,7 +7,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.chb.transformers.aop.Account;
-import com.chb.transformers.service.AspectService;
 import com.chb.transformers.service.MyService;
 
 @RunWith(SpringRunner.class)
@@ -15,16 +14,10 @@ import com.chb.transformers.service.MyService;
 public class SpringTest {
     @Autowired
     private MyService service;
-    @Autowired
-    private AspectService s2;
-   
+    
     @Test
     public void testSave() {
     	service.save();
-    }
-    @Test
-    public void testUpdate() {
-    	service.update();
     }
     @Test
     public void testAccount() {
@@ -33,5 +26,9 @@ public class SpringTest {
         	System.out.println(a);
         	a.save();
     	}
+    }
+    @Test
+    public void testQuery() {
+    	service.query("000");
     }
 }

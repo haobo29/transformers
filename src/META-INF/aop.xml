@@ -1,0 +1,14 @@
+<!DOCTYPE aspectj PUBLIC "-//AspectJ//DTD//EN" "https://www.eclipse.org/aspectj/dtd/aspectj.dtd">
+<aspectj>
+
+    <weaver options="-showWeaveInfo -Xset:overWeaving=true">
+	</weaver>
+
+    <aspects>
+        <!-- weave in just this aspect <aspect name="com.chb.transformers.aop.aspectj.MyAspect"/>
+        <aspect name="com.chb.transformers.aop.aspectj.ProfilingAspect"/>-->
+        
+        
+    </aspects>
+
+</aspectj>

@@ -1,9 +1,5 @@
 package com.chb.transformers.service;
 
-import com.chb.transformers.aop.Idempotent;
-
-import java.lang.annotation.Annotation;
-
 import org.springframework.stereotype.Component;
 
 @Component("service")
@@ -12,11 +8,9 @@ public class MyService implements Service{
         System.out.println("MyService.save");
     }
     public String query(String queryParam){
-        System.out.println("MyService.query");
+        System.out.println(queryParam);
         return queryParam;
     }
-    @Idempotent
-    public void update(){
-        System.out.println("MyService.update");
-    }
+    
+   
 }
